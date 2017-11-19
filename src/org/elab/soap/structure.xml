@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="v2.9.0">
+  <partials/>
+  <file path="func_dog_1.php" generated-path="func_dog_1.html" hash="e102dca681715d6cc4d04df7043906ca" package="SOAP_DOG">
+    <docblock line="0">
+      <description>func_dog_1 - файл с функциями по договорам</description>
+      <long-description>PHP Version 5</long-description>
+      <tag name="category" line="0" description="SOAP_Server"/>
+      <tag name="package" line="0" description="SOAP_DOG"/>
+      <tag name="author" line="0" description="Eugene Arbatsky" link="mailto:eugine@elab.pro"/>
+      <tag name="copyright" line="0" description="2007-2015 IrGUPS. All rights reserved."/>
+      <tag name="license" line="0" description="EIS" link="http://eis.iriit/license/"/>
+      <tag name="version" line="0" description="CVS: $Id$"/>
+      <tag name="link" line="0" description="http://eis.iriit/soap/" link="http://eis.iriit/soap/"/>
+    </docblock>
+    <function namespace="" line="39" package="SOAP_DOG">
+      <name>Dog_GetSpecs</name>
+      <full_name>\Dog_GetSpecs()</full_name>
+      <docblock line="39">
+        <description>Function returns information about specialities.</description>
+        <long-description>Long description</long-description>
+        <tag name="package" line="39" description="SOAP_DOG"/>
+        <tag name="author" line="39" description="Another person"/>
+        <tag name="date" line="39" description="17.10.2013"/>
+        <tag name="global" line="39" description="int $conn2"/>
+        <tag name="param" line="39" description="" type="integer" variable="$student_id">
+          <type>integer</type>
+        </tag>
+        <tag name="param" line="39" description="&lt;p&gt;0 or 1&lt;/p&gt;" type="integer" variable="$mode">
+          <type>integer</type>
+        </tag>
+        <tag name="return" line="39" description="" type="string">
+          <type>string</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$student_id</name>
+        <default>0</default>
+        <type>integer</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$mode</name>
+        <default>0</default>
+        <type>integer</type>
+      </argument>
+    </function>
+  </file>
+</project>
