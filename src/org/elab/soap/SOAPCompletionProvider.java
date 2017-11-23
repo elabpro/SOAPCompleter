@@ -63,6 +63,7 @@ public class SOAPCompletionProvider implements CompletionProvider {
 
                 String filter = null;
                 int startOffset = caretOffset - 1;
+                int myOffset = 0;
 
                 try {
                     final StyledDocument bDoc = (StyledDocument) document;
@@ -70,6 +71,7 @@ public class SOAPCompletionProvider implements CompletionProvider {
                     final char[] line = bDoc.getText(lineStartOffset, caretOffset - lineStartOffset).toCharArray();
                     final int whiteOffset = indexOfWhite(line);
                     filter = new String(line, whiteOffset + 1, line.length - whiteOffset - 1);
+                    myOffset = caretOffset - lineStartOffset - bDoc.getText(lineStartOffset, caretOffset + lineStartOffset).indexOf(SOAPConfig.FunctionPrefix) - SOAPConfig.FunctionPrefix.length();
                     if (whiteOffset > 0) {
                         startOffset = lineStartOffset + whiteOffset + 1;
                     } else {
@@ -84,7 +86,7 @@ public class SOAPCompletionProvider implements CompletionProvider {
                 for (int i = 0; i < listSOAPFunctions.size(); i++) {
                     final String itemName = SOAPConfig.FunctionPrefix + listSOAPFunctions.get(i).name;
                     if (!itemName.equals("") && itemName.startsWith(filter)) {
-                        completionResultSet.addItem(new SOAPCompletionItem(listSOAPFunctions.get(i), startOffset, caretOffset));
+                        completionResultSet.addItem(new SOAPCompletionItem(listSOAPFunctions.get(i), myOffset, caretOffset - myOffset));
                     }
                 }
 
@@ -212,7 +214,7 @@ public class SOAPCompletionProvider implements CompletionProvider {
      */
     private String getFileName() {
         String filename = "/org/elab/soap/structure.xml";
-        String tmpName = "SOAPConfig.FileTmpName";
+        String tmpName = SOAPConfig.FileTmpName;
         try {
             if (new File(tmpName).exists() == false) {
                 System.out.println("Trying to download");

@@ -85,6 +85,7 @@ public class SOAPCompletionItem implements CompletionItem {
         try {
             StyledDocument doc = (StyledDocument) jtc.getDocument();
             text = item.name + item.getArgs();
+            doc.remove(caretOffset, dotOffset);
             doc.insertString(caretOffset, text, null);
             //This statement will close the code completion box:
             Completion.get().hideAll();
